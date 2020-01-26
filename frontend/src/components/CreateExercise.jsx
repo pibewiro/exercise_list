@@ -20,7 +20,7 @@ export default class CreateExercise extends Component {
 
     componentDidMount()
     {
-        axios.get("https://exlist.herokuapp.com/users")
+        axios.get("/users")
         .then(res=>this.setState({users:res.data}))
         .then(()=>this.setState({username:this.state.users[0].username}))
     }
