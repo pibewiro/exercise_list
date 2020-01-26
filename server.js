@@ -24,6 +24,8 @@ connection.once("open", ()=>console.log("Connected to Database"));
 app.use("/users", userRoutes);
 app.use("/exercises", exerciseRoutes);
 
+console.log("Dir: ", __dirname);
+
 if(process.env.NODE_ENV === "production")
 {
     app.use(express.static("frontend/build"))
