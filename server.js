@@ -26,10 +26,10 @@ app.use("/exercises", exerciseRoutes);
 
 if(process.env.NODE_ENV === "production")
 {
-    app.use(express.static("frontend/buiild"))
+    app.use(express.static("frontend/public"))
 
     app.get("*", (req,res)=>{
-        res.sendFile(path.resolve(__dirname, "frontend", "buiild", "index.html"))
+        res.sendFile(path.resolve(__dirname, "frontend", "public", "index.html"))
     })
 }
 
