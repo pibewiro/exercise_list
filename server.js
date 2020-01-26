@@ -17,7 +17,7 @@ app.use(express.json());
 
 
 const uri = process.env.ATLAS_URI;
-mongoose.connect(uri, {useNewUrlParser:true, useCreateIndex:true, useUnifiedTopology: true})
+mongoose.connect(uri, {useNewUrlParser:true, useCreateIndex:true})
 
 connection.once("open", ()=>console.log("Connected to Database"));
 
