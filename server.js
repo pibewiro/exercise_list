@@ -24,13 +24,13 @@ connection.once("open", ()=>console.log("Connected to Database"));
 app.use("/users", userRoutes);
 app.use("/exercises", exerciseRoutes);
 
-if(process.env.NODE_ENV === "production")
-{
-    app.use(express.static("frontend/public"))
+// if(process.env.NODE_ENV === "production")
+// {
+//     app.use(express.static("frontend/public"))
 
-    app.get("*", (req,res)=>{
-        res.sendFile(path.resolve(__dirname, "frontend", "public", "index.html"))
-    })
-}
+//     app.get("*", (req,res)=>{
+//         res.sendFile(path.resolve(__dirname, "frontend", "public", "index.html"))
+//     })
+// }
 
 app.listen(port, ()=>console.log(`Connected to Port: ${port}`))
