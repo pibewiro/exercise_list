@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import DatePicker from "react-datepicker"
-import "../../../backend/node_modules/react-datepicker/dist/react-datepicker.css"
+import "react-datepicker/dist/react-datepicker.css"
 import axios from "axios";
 
 

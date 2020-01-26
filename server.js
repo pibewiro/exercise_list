@@ -3,8 +3,8 @@ const cors = require("cors");
 const mongoose = require("mongoose")
 const port = process.env.PORT || 5000;
 const connection = mongoose.connection;
-const userRoutes = require("./backend/routes/user")
-const exerciseRoutes = require("./backend/routes/exercise")
+const userRoutes = require("./routes/user")
+const exerciseRoutes = require("./routes/exercise")
 const path = require("path")
 require("dotenv").config();
 
