@@ -5,6 +5,7 @@ const port = process.env.PORT || 5000;
 const connection = mongoose.connection;
 const userRoutes = require("./routes/user")
 const exerciseRoutes = require("./routes/exercise")
+const path = require("path")
 require("dotenv").config();
 
 
@@ -22,5 +23,14 @@ connection.once("open", ()=>console.log("Connected to Database"));
 
 app.use("/users", userRoutes);
 app.use("/exercises", exerciseRoutes);
+
+if(process.env.NODE_ENV === "production")
+{
+    app.use(express.static("frontend/build"))
+
+    app.get("*", (req,res)=>{
+        res.sendFile(path.resolve(__dirname, "frontend", "build", "index.html"))
+    })
+}
 
 app.listen(port, ()=>console.log(`Connected to Port: ${port}`))
