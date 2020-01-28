@@ -15,7 +15,7 @@ function App() {
         <Navbar />
         <br />
         <Route exact path="/" component={ExerciseList} />
-        <Route exact path="/editExercise" component={EditExercise} />
+        <Route exact path="/edit/:id" component={EditExercise} />
         <Route exact path="/createExercise" component={CreateExercise} />
         <Route exact path="/createUser" component={CreateUser} />
       </Router>

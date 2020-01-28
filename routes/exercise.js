@@ -42,8 +42,10 @@ router.post("/update/:id", (req,res)=>{
 })
 
 router.delete("/:id", (req, res)=>{
+
+    console.log(req.params.id)
     Exercise.findByIdAndDelete(req.params.id)
-    .then(ex=>res.json("deleted"))
+    .then(ex=>res.json(ex))
     .catch(err=>console.log(err))
 })
 
